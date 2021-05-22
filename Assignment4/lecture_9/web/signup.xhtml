@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <head>
+        <title>Sign Up</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+           <h:form id="signupForm">
+
+
+            <p:growl id="msg" showDetail="true" life="3000" />
+            <p:panel header="Sign Up" style="width: 560px;">
+
+                <h:panelGrid id="signupPanel" columns="2">
+
+                    <h:outputText value="Username" />
+                    <p:inputText id="username" value="#{signup.uname}" ></p:inputText>
+
+                    <p:spacer></p:spacer>
+
+                    <p:message for="username" ></p:message>
+
+                    <h:outputText value="Password" />
+
+                    <p:password id="password" value="#{signup.password}"  feedback="false"></p:password>
+
+                    <p:spacer></p:spacer>
+
+                    <p:message for="password"></p:message>
+
+                    <p:spacer></p:spacer>
+
+                    <p:commandButton id="signupProject" action="#{signup.signupProject()}" value="signup" update="signupForm" ajax="true"></p:commandButton>
+
+                </h:panelGrid>
+
+            </p:panel>
+        </h:form>
+    </body>
+</html>
